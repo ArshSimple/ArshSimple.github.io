@@ -1,4 +1,4 @@
-/* --- Variables & Reset --- */
+/* Base setup & glass variables */
 :root {
   --primary: #4facfe;
   --secondary: #00f2fe;
@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Background Design --- */
+/* Background effects - noise and blobs */
 .noise-overlay {
   position: fixed; width: 100%; height: 100%; top: 0; left: 0;
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
@@ -35,7 +35,7 @@ body {
 
 @keyframes float { 0% { transform: translate(0,0); } 100% { transform: translate(40px, 40px); } }
 
-/* --- HERO SPECIFIC DESIGN --- */
+/* Hero section elements */
 .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
 .hero-visuals { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
 .grid-overlay { position: absolute; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(circle at center, black 0%, transparent 80%); transform: perspective(500px) rotateX(20deg) translateY(-50px) scale(1.5); opacity: 0.5; }
@@ -48,7 +48,7 @@ body {
 .shape-sphere { width: 120px; height: 120px; bottom: 15%; left: 10%; border-radius: 50%; background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0)); animation: floatShape 10s ease-in-out infinite reverse; }
 @keyframes floatShape { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-30px) rotate(10deg); } }
 
-/* --- Layout --- */
+/* Global layout and nav */
 .container { max-width: 1100px; margin: auto; padding: 0 20px; position: relative; z-index: 2; }
 header { position: fixed; top: 20px; width: 100%; display: flex; justify-content: center; z-index: 1000; }
 .nav-glass { display: flex; align-items: center; justify-content: space-between; width: 90%; max-width: 900px; padding: 12px 30px; border-radius: 50px; background: rgba(5, 5, 5, 0.6); backdrop-filter: blur(15px); border: 1px solid var(--glass-border); }
@@ -58,7 +58,7 @@ header { position: fixed; top: 20px; width: 100%; display: flex; justify-content
 .nav-links a { font-size: 0.9rem; color: var(--text-muted); transition: 0.3s; }
 .nav-links a:hover, .nav-links a.active { color: #fff; }
 
-/* Hero Text */
+/* Hero typography */
 .hero-card { text-align: center; max-width: 800px; padding: 50px 30px; }
 .hero h1 { font-size: 4.5rem; line-height: 1.1; margin: 10px 0; letter-spacing: -2px; }
 .gradient-text { background: linear-gradient(to right, var(--secondary), var(--primary)); -webkit-background-clip: text; color: transparent; }
@@ -70,47 +70,32 @@ header { position: fixed; top: 20px; width: 100%; display: flex; justify-content
 .btn-glass { border: 1px solid rgba(255,255,255,0.2); color: #fff; }
 .btn-glass:hover { background: rgba(255,255,255,0.1); }
 
-/* Sections */
+/* Common section & card styles */
 .section { padding: 120px 0; }
 .section-title { font-size: 3rem; font-weight: 700; margin-bottom: 50px; text-align: center; color: #fff; }
 .center { text-align: center; }
 .glass-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px; backdrop-filter: blur(12px); box-shadow: 0 4px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
 .glass-card:hover { border-color: var(--glass-shine); box-shadow: 0 10px 40px rgba(0, 242, 254, 0.1); transform: translateY(-5px); }
 
-/* ABOUT SECTION (UPDATED) */
-.about-layout { display: flex; gap: 50px; align-items: stretch; } /* Increased Gap */
+/* About section grid */
+.about-layout { display: flex; gap: 50px; align-items: stretch; }
 .about-col { flex: 1; }
 .info-col { flex: 2; }
 .profile-card { text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; }
-/* ... inside style.css ... */
 
-.profile-card { 
-  text-align: center; 
-  height: 100%; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; /* This forces elements to center horizontally */
-  padding: 40px; 
-}
-
+/* Fixed profile picture link here */
 .profile-pic {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  
-  /* CRITICAL FIX: Focus on the top part of the image where your face is */
-  background-image: url('images/Profile.jpg');
+  background-image: url('images/Profile.jpeg');
   background-size: cover;
   background-position: center top; 
-  
-  /* Centers the circle element itself inside the card */
   margin: 0 auto 20px auto;
-  
-  /* Styling */
   border: 3px solid var(--secondary);
   box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
 }
+
 .about-text-lg { font-size: 1.05rem; line-height: 1.8; color: #d1d5db; margin-bottom: 20px; }
 .divider { height: 1px; background: var(--glass-border); width: 100%; margin: 20px 0; }
 
@@ -119,15 +104,17 @@ header { position: fixed; top: 20px; width: 100%; display: flex; justify-content
 .skill-item:hover { background: var(--secondary); color: #000; transform: translateY(-3px); }
 .skill-item i { font-size: 1.2rem; }
 
-/* Services, Timeline, Projects */
+/* Services, timeline and project cards */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 .service-box { text-align: center; }
 .icon-box { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
+
 .timeline { max-width: 800px; margin: auto; padding-left: 20px; border-left: 2px solid var(--glass-border); }
 .timeline-item { position: relative; margin-bottom: 40px; }
 .timeline-dot { position: absolute; left: -26px; top: 0; width: 10px; height: 10px; background: var(--secondary); border-radius: 50%; box-shadow: 0 0 10px var(--secondary); }
 .timeline-content { padding: 25px; }
 .timeline-date { color: var(--secondary); font-size: 0.9rem; font-weight: 600; display: block; margin-bottom: 10px; }
+
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
 .project-card { padding: 0; overflow: hidden; }
 .project-img { height: 220px; background-size: cover; background-position: center; filter: grayscale(100%); transition: 0.5s; }
@@ -135,7 +122,7 @@ header { position: fixed; top: 20px; width: 100%; display: flex; justify-content
 .project-content { padding: 25px; }
 .tags span { font-size: 0.75rem; border: 1px solid var(--glass-border); padding: 4px 10px; border-radius: 15px; margin-right: 5px; color: var(--text-muted); }
 
-/* Mobile */
+/* Scroll animations & mobile responsiveness */
 .hidden { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .show { opacity: 1; transform: translateY(0); }
 .delay-100 { transition-delay: 0.1s; }
