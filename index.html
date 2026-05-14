@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arsh Agrawal | Creative Developer</title>
   <meta name="description" content="Portfolio of Arsh Agrawal - Web Developer & Designer based in Mumbai.">
-  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div class="noise-overlay"></div>
@@ -33,9 +35,9 @@
           <li><a href="#projects">Work</a></li>
         </ul>
       </nav>
-      <div class="hamburger">
+      <button class="hamburger" aria-label="Toggle navigation menu">
         <i class="fas fa-bars"></i>
-      </div>
+      </button>
     </div>
   </header>
 
@@ -53,8 +55,9 @@
         <span class="greeting">Hey, I'm Arsh 👋</span>
         <h1>Digital <span class="gradient-text">Architect</span></h1>
         <h2 class="dynamic-wrapper">I build <span id="dynamic-text"></span><span class="cursor-blink">|</span></h2>
-        <p>Graduated Web Technologist (8.80 CGPA) focused on building responsive, secure, and high-performance digital solutions.</p>
-        
+        <p>Graduated Web Technologist (8.80 CGPA) focused on building responsive, secure, and high-performance digital
+          solutions.</p>
+
         <div class="hero-btns">
           <a href="#projects" class="btn btn-glow">View Work</a>
           <a href="#about" class="btn btn-glass">More About Me</a>
@@ -65,7 +68,7 @@
 
   <section id="about" class="section">
     <div class="container about-layout">
-      
+
       <div class="about-col hidden">
         <div class="glass-card profile-card">
           <div class="profile-pic" style="background-image: url('images/me.jpeg');"></div>
@@ -83,12 +86,16 @@
         <div class="glass-card info-card hidden delay-100">
           <h3>Academic Excellence</h3>
           <p class="about-text-lg">
-            I recently graduated with a <strong>B.Voc in Web Technology</strong> from <strong>HSNC University</strong> with a final <strong>CGPA of 8.80/10</strong>. My journey peaked in my final semester where I achieved a near-perfect <strong>9.70 SGPA</strong>.
+            I recently graduated with a <strong>B.Voc in Web Technology</strong> from <strong>HSNC University</strong>
+            with a final <strong>CGPA of 8.80/10</strong>. My journey peaked in my final semester where I achieved a
+            near-perfect <strong>9.70 SGPA</strong>.
           </p>
           <p class="about-text-lg">
-            Beyond coding, I specialize in Software Engineering and Marketing Automation, bridging the gap between technical logic and business growth. I am passionate about public speaking and following global technology trends.
+            Beyond coding, I specialize in Software Engineering and Marketing Automation, bridging the gap between
+            technical logic and business growth. I am passionate about public speaking and following global technology
+            trends.
           </p>
-          
+
           <div class="divider"></div>
 
           <h4 class="mt-4">Technical Expertise</h4>
@@ -162,25 +169,31 @@
       <h2 class="section-title center hidden">Selected Works</h2>
       <div class="project-grid">
         <article class="glass-card project-card hidden">
-          <a href="https://github.com/ArshSimple/ArshSimple.github.io" target="_blank" class="project-img" style="display: block; width: 100%; background-image: url('images/img1.png');"></a>
+          <a href="https://github.com/ArshSimple/ArshSimple.github.io" target="_blank" class="project-img-wrapper">
+            <img src="images/img1.png" alt="Preview of Arsh's Portfolio Website" class="project-img">
+          </a>
           <div class="project-content">
             <div class="project-header">
               <h3>Portfolio Website</h3>
             </div>
-            <p>A professional glass-morphism portfolio showcasing high academic performance and technical versatility.</p>
+            <p>A professional glass-morphism portfolio showcasing high academic performance and technical versatility.
+            </p>
             <div class="tags">
               <span>HTML</span><span>CSS</span><span>JS</span>
             </div>
           </div>
         </article>
-        
+
         <article class="glass-card project-card hidden delay-100">
-          <a href="https://github.com/ArshSimple/FaceChain" target="_blank" class="project-img" style="display: block; width: 100%; background-image: url('images/img2.png');"></a>
+          <a href="https://github.com/ArshSimple/FaceChain" target="_blank" class="project-img-wrapper">
+            <img src="images/img2.png" alt="Preview of FaceChain Project" class="project-img">
+          </a>
           <div class="project-content">
             <div class="project-header">
               <h3>FaceChain</h3>
             </div>
-            <p>Awarded <strong>Grade O (Outstanding)</strong>. A decentralized AI authentication system using blockchain and ResNet-34.</p>
+            <p>Awarded <strong>Grade O (Outstanding)</strong>. A decentralized AI authentication system using blockchain
+              and ResNet-34.</p>
             <div class="tags">
               <span>Blockchain</span><span>Python</span><span>AI</span>
             </div>
@@ -190,11 +203,15 @@
     </div>
   </section>
 
+  <button id="backToTop" aria-label="Scroll back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <footer>
     <p>&copy; 2026 Arsh Agrawal. Crafted with Code.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
   <script>
     // Smooth Scroll (Lenis)
     const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', smooth: true });
@@ -204,9 +221,9 @@
     // Smooth Glide for Navigation Links
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         const target = link.getAttribute('href');
-        lenis.scrollTo(target, { offset: -50 }); 
+        lenis.scrollTo(target, { offset: -50 });
         document.querySelector('.nav-links').classList.remove('active');
       });
     });
@@ -220,9 +237,24 @@
     document.addEventListener("DOMContentLoaded", type);
 
     // Scroll Reveal & Hamburger Menu
-    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); }); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); }); });
     document.querySelectorAll('.hidden').forEach((el) => observer.observe(el));
     document.querySelector('.hamburger').addEventListener('click', () => { document.querySelector('.nav-links').classList.toggle('active'); });
+
+    // NEW: Back to Top Button Logic
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      lenis.scrollTo(0, { duration: 1.5 }); // Uses your existing smooth scroll library!
+    });
   </script>
 </body>
+
 </html>
