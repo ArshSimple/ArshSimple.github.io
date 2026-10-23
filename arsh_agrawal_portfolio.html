@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arsh Agrawal — Web Developer & Software Engineer</title>
+  <meta name="description" content="Official Portfolio of Arsh Agrawal — B.Voc. Web Technology Graduate (8.80 CGPA), Full-Stack Web Developer, and Creator of FaceChain." />
+
+  <!-- Social Preview (LinkedIn, WhatsApp, X) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arsh Agrawal — Web Developer & Software Engineer" />
+  <meta property="og:description" content="B.Voc. Web Technology Graduate (8.80 CGPA), Full-Stack Web Developer, and Creator of FaceChain." />
+  <meta property="og:url" content="https://arshsimple.github.io" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Arsh Agrawal — Web Developer & Software Engineer" />
+  <meta name="twitter:description" content="B.Voc. Web Technology Graduate (8.80 CGPA), Full-Stack Web Developer, and Creator of FaceChain." />
+  <meta name="theme-color" content="#7B7CE6" />
+
+  <!-- Skip intro on repeat visits (same browser session) and for reduced-motion users -->
+  <script>
+    try {
+      if (sessionStorage.getItem('introSeen') === '1' ||
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('skip-intro');
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Custom Professional Geometric 'A' Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23181B26'/%3E%3Cstop offset='100%25' stop-color='%230B0E17'/%3E%3C/linearGradient%3E%3ClinearGradient id='cyanBlue' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2358F0C4'/%3E%3Cstop offset='50%25' stop-color='%238CC7F7'/%3E%3Cstop offset='100%25' stop-color='%237B7CE6'/%3E%3C/linearGradient%3E%3ClinearGradient id='silver' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FFFFFF'/%3E%3Cstop offset='100%25' stop-color='%238CC7F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='112' height='112' x='4' y='4' rx='26' fill='url(%23bg)' stroke='%237B7CE6' stroke-width='3'/%3E%3Cpath d='M52 24 L64 24 L42 74 L54 88 L42 88 L30 74 Z' fill='url(%23cyanBlue)'/%3E%3Cpath d='M28 78 L38 90 L30 96 L20 96 Z' fill='%237B7CE6'/%3E%3Cpath d='M67 24 L96 96 L82 96 L58 38 Z' fill='url(%23silver)'/%3E%3Cline x1='58' y1='70' x2='76' y2='58' stroke='%2358F0C4' stroke-width='3.5' stroke-linecap='round'/%3E%3Ccircle cx='58' cy='70' r='5.5' fill='%2358F0C4'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       UNIFIED DUAL-THEME COLOR SYSTEM (XANDER PALETTE + CELLS PRECISION)
+       ========================================================================== */
+    :root,
+    html[data-theme="light"] {
+      --bg-outer: #CFE7FF;
+      --bg-outer-grad: radial-gradient(circle at 15% 15%, #E3F2FF 0%, #B8DCFA 55%, #A3CEF6 100%);
+      --bg-canvas: #FFFFFF;
+      --bg-subtle: #F4F8FD;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F8FAFF;
+      --bg-glass: rgba(255, 255, 255, 0.90);
+      --text-primary: #181B26;
+      --text-secondary: #525B75;
+      --text-muted: #7D87A3;
+      --border-line: #E4ECF7;
+      --border-strong: #CBD8EC;
+      --accent-indigo: #7B7CE6;
+      --accent-indigo-soft: rgba(123, 124, 230, 0.12);
+      --accent-mint: #58F0C4;
+      --accent-mint-text: #064E3B;
+      --accent-sky: #8CC7F7;
+      --hero-glow-1: rgba(123, 124, 230, 0.24);
+      --hero-glow-2: rgba(140, 199, 247, 0.36);
+      --hero-glow-3: rgba(88, 240, 196, 0.24);
+      --pill-bg: #FFFFFF;
+      --pill-text: #181B26;
+      --pill-shadow: 0 14px 32px -6px rgba(24, 27, 38, 0.10);
+      --card-shadow: 0 20px 50px -15px rgba(28, 45, 74, 0.08);
+    }
+
+    html[data-theme="dark"] {
+      --bg-outer: #060810;
+      --bg-outer-grad: radial-gradient(circle at 20% 15%, #12172B 0%, #090C16 60%, #05070E 100%);
+      --bg-canvas: #0D111E;
+      --bg-subtle: #13192B;
+      --bg-card: #151C30;
+      --bg-card-hover: #1B243D;
+      --bg-glass: rgba(13, 17, 30, 0.90);
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --border-line: rgba(255, 255, 255, 0.09);
+      --border-strong: rgba(123, 124, 230, 0.35);
+      --accent-indigo: #8A8CF5;
+      --accent-indigo-soft: rgba(138, 140, 245, 0.16);
+      --accent-mint: #58F0C4;
+      --accent-mint-text: #052E24;
+      --accent-sky: #38BDF8;
+      --hero-glow-1: rgba(123, 124, 230, 0.28);
+      --hero-glow-2: rgba(56, 189, 248, 0.20);
+      --hero-glow-3: rgba(88, 240, 196, 0.16);
+      --pill-bg: #192238;
+      --pill-text: #F8FAFC;
+      --pill-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.55);
+      --card-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.55);
+    }
+
+    body {
+      background: var(--bg-outer-grad);
+      background-color: var(--bg-outer);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      overflow-x: hidden;
+    }
+
+    .xander-shell {
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-line);
+      box-shadow: var(--card-shadow);
+      transition: background-color 0.35s ease, border-color 0.35s ease;
+    }
+
+    /* ==========================================================================
+       1. CLEAN, SLOWER INTRO LANDING SCREEN MATCHING WEBSITE COLORS
+       ========================================================================== */
+    #intro-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: var(--bg-canvas);
+      background-image:
+        radial-gradient(circle at 28% 30%, var(--hero-glow-1) 0%, transparent 52%),
+        radial-gradient(circle at 72% 35%, var(--hero-glow-2) 0%, transparent 55%),
+        radial-gradient(circle at 50% 75%, var(--hero-glow-3) 0%, transparent 52%);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+    }
+
+    #intro-loader.loader-hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    html.skip-intro #intro-loader {
+      display: none;
+    }
+
+    /* Respect "reduce motion" system setting */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-delay: 0s !important;
+        transition-duration: 0.001ms !important;
+      }
+      .marquee-track, .float-1, .float-2, .float-3, .logo-pulse, .skill-dot {
+        animation: none !important;
+      }
+    }
+
+    /* Visible keyboard focus */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent-indigo);
+      outline-offset: 3px;
+    }
+
+    .char-reveal {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(28px) scale(0.94);
+      animation: charRise 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    }
+
+    @keyframes charRise {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes roleFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .role-reveal {
+      opacity: 0;
+      animation: roleFadeIn 0.9s ease forwards;
+      animation-delay: 0.95s;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        filter: drop-shadow(0 10px 22px rgba(123, 124, 230, 0.32));
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        filter: drop-shadow(0 14px 30px rgba(88, 240, 196, 0.50));
+        transform: translateY(-4px) scale(1.04);
+      }
+    }
+
+    .logo-pulse {
+      animation: pulseGlow 3.2s ease-in-out infinite;
+    }
+
+    /* ==========================================================================
+       HERO AURA & SIDE FLOATING PILLS (ZERO OVERLAP ON PORTRAIT)
+       ========================================================================== */
+    .hero-aura {
+      background:
+        radial-gradient(circle at 60% 42%, var(--hero-glow-2) 0%, transparent 58%),
+        radial-gradient(circle at 25% 25%, var(--hero-glow-1) 0%, transparent 50%),
+        radial-gradient(circle at 78% 78%, var(--hero-glow-3) 0%, transparent 52%);
+    }
+
+    .xander-pill {
+      background-color: var(--pill-bg);
+      color: var(--pill-text);
+      box-shadow: var(--pill-shadow);
+      border: 1px solid var(--border-line);
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1.2rem 0.5rem 0.5rem;
+      font-weight: 700;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .xander-pill:hover {
+      transform: translateX(5px) scale(1.02);
+      border-color: var(--accent-indigo);
+    }
+
+    .mint-badge {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 9999px;
+      background-color: var(--accent-mint);
+      color: var(--accent-mint-text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px rgba(88, 240, 196, 0.22);
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .float-1 { animation: floatSlow 4.2s ease-in-out infinite; }
+    .float-2 { animation: floatSlow 4.8s ease-in-out 0.7s infinite; }
+    .float-3 { animation: floatSlow 5.4s ease-in-out 1.4s infinite; }
+
+    /* ==========================================================================
+       CELLS ARCHITECTURAL GRID & KINETIC MARQUEE
+       ========================================================================== */
+    .cells-grid {
+      border-top: 1px solid var(--border-line);
+      border-left: 1px solid var(--border-line);
+    }
+    .cells-cell {
+      border-right: 1px solid var(--border-line);
+      border-bottom: 1px solid var(--border-line);
+      background-color: var(--bg-card);
+      transition: background-color 0.25s ease, transform 0.25s ease;
+    }
+    .cells-cell:hover {
+      background-color: var(--bg-card-hover);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scrollMarquee 30s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       ANIMATED TECHNICAL SKILLS CARDS (ENTRANCE + SHIMMER + HOVER LIFT)
+       ========================================================================== */
+    @keyframes skillReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.94);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .skill-item {
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: skillReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease;
+    }
+
+    /* Shimmer sweep on skill card hover */
+    .skill-item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 65%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(123, 124, 230, 0.16),
+        rgba(88, 240, 196, 0.20),
+        transparent
+      );
+      transform: skewX(-20deg);
+      transition: left 0.65s ease;
+      pointer-events: none;
+    }
+
+    .skill-item:hover::after {
+      left: 140%;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-5px) scale(1.03);
+      border-color: var(--accent-indigo);
+      box-shadow: 0 14px 28px -8px rgba(123, 124, 230, 0.28);
+    }
+
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.35); opacity: 1; }
+    }
+
+    .skill-dot {
+      animation: dotPulse 2.6s ease-in-out infinite;
+    }
+
+    /* ==========================================================================
+       BUTTONS & SURFACES
+       ========================================================================== */
+    .btn-indigo {
+      background-color: var(--accent-indigo);
+      color: #FFFFFF;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 24px -6px rgba(123, 124, 230, 0.55);
+    }
+    .btn-indigo:hover {
+      background-color: #6364D4;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px -6px rgba(123, 124, 230, 0.7);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-indigo);
+      background-color: var(--accent-indigo-soft);
+      transform: translateY(-2px);
+    }
+
+    .surface-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-line);
+      box-shadow: var(--card-shadow);
+    }
+
+    .surface-subtle {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+    }
+
+    .text-main { color: var(--text-primary); }
+    .text-sub { color: var(--text-secondary); }
+    .text-mute { color: var(--text-muted); }
+  </style>
+  <!-- Tailwind CSS (pre-built, replaces the CDN script) -->
+  <style id="tailwind-built">*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Plus Jakarta Sans,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.static{position:static}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.-left-5{left:-1.25rem}.-top-5{top:-1.25rem}.top-0{top:0}.z-20{z-index:20}.z-40{z-index:40}.mx-2{margin-left:.5rem;margin-right:.5rem}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:.5rem}.mb-2\.5{margin-bottom:.625rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-7{margin-bottom:1.75rem}.mb-8{margin-bottom:2rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[4\/5\]{aspect-ratio:4/5}.h-1\.5{height:.375rem}.h-10{height:2.5rem}.h-2{height:.5rem}.h-2\.5{height:.625rem}.h-20{height:5rem}.h-3{height:.75rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-7{height:1.75rem}.h-full{height:100%}.w-10{width:2.5rem}.w-2{width:.5rem}.w-2\.5{width:.625rem}.w-20{width:5rem}.w-3{width:.75rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-48{width:12rem}.w-5{width:1.25rem}.w-7{width:1.75rem}.w-\[235px\]{width:235px}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.max-w-\[1360px\]{max-width:1360px}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.flex-shrink{flex-shrink:1}.flex-shrink-0{flex-shrink:0}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.select-none{-webkit-user-select:none;-moz-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-3\.5{gap:.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-2\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.625rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.625rem*var(--tw-space-y-reverse))}.space-y-3\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.875rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.875rem*var(--tw-space-y-reverse))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem*var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.break-all{word-break:break-all}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[20px\]{border-radius:20px}.rounded-\[26px\]{border-radius:26px}.rounded-\[32px\]{border-radius:32px}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-amber-500\/25{border-color:rgba(245,158,11,.25)}.border-emerald-500\/25{border-color:rgba(16,185,129,.25)}.border-rose-500\/25{border-color:rgba(244,63,94,.25)}.border-sky-500\/25{border-color:rgba(14,165,233,.25)}.border-l-\[\#7B7CE6\]{--tw-border-opacity:1;border-left-color:rgb(123 124 230/var(--tw-border-opacity,1))}.bg-\[\#181B26\]{--tw-bg-opacity:1;background-color:rgb(24 27 38/var(--tw-bg-opacity,1))}.bg-\[\#58F0C4\]{--tw-bg-opacity:1;background-color:rgb(88 240 196/var(--tw-bg-opacity,1))}.bg-\[\#7B7CE6\]{--tw-bg-opacity:1;background-color:rgb(123 124 230/var(--tw-bg-opacity,1))}.bg-\[\#7B7CE6\]\/15{background-color:rgba(123,124,230,.15)}.bg-\[\#8CC7F7\]{--tw-bg-opacity:1;background-color:rgb(140 199 247/var(--tw-bg-opacity,1))}.bg-amber-400{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.bg-amber-500\/10{background-color:rgba(245,158,11,.1)}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153/var(--tw-bg-opacity,1))}.bg-emerald-500\/10{background-color:rgba(16,185,129,.1)}.bg-rose-400{--tw-bg-opacity:1;background-color:rgb(251 113 133/var(--tw-bg-opacity,1))}.bg-rose-500\/10{background-color:rgba(244,63,94,.1)}.bg-sky-500\/10{background-color:rgba(14,165,233,.1)}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240/var(--tw-bg-opacity,1))}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-\[\#7B7CE6\]{--tw-gradient-from:#7b7ce6 var(--tw-gradient-from-position);--tw-gradient-to:rgba(123,124,230,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-\[\#58B9F7\]{--tw-gradient-to:rgba(88,185,247,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#58b9f7 var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-\[\#8CC7F7\]{--tw-gradient-to:rgba(140,199,247,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#8cc7f7 var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-\[\#16C79A\]{--tw-gradient-to:#16c79a var(--tw-gradient-to-position)}.to-\[\#58F0C4\]{--tw-gradient-to:#58f0c4 var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.object-cover{-o-object-fit:cover;object-fit:cover}.object-top{-o-object-position:top;object-position:top}.p-2\.5{padding:.625rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.p-8{padding:2rem}.px-0{padding-left:0;padding-right:0}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0{padding-top:0;padding-bottom:0}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-4{padding-bottom:1rem}.pt-1{padding-top:.25rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.font-mono{font-family:JetBrains Mono,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.12\]{line-height:1.12}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-\[0\.25em\]{letter-spacing:.25em}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.tracking-widest{letter-spacing:.1em}.text-\[\#064E3B\]{--tw-text-opacity:1;color:rgb(6 78 59/var(--tw-text-opacity,1))}.text-\[\#16C79A\]{--tw-text-opacity:1;color:rgb(22 199 154/var(--tw-text-opacity,1))}.text-\[\#7B7CE6\]{--tw-text-opacity:1;color:rgb(123 124 230/var(--tw-text-opacity,1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.opacity-70{opacity:.7}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.drop-shadow{--tw-drop-shadow:drop-shadow(0 1px 2px rgba(0,0,0,.1)) drop-shadow(0 1px 1px rgba(0,0,0,.06))}.drop-shadow,.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-100{transition-duration:.1s}.duration-500{transition-duration:.5s}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.ease-out{transition-timing-function:cubic-bezier(0,0,.2,1)}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-\[\#7B7CE6\]:hover{--tw-border-opacity:1;border-color:rgb(123 124 230/var(--tw-border-opacity,1))}.hover\:text-\[\#7B7CE6\]:hover{--tw-text-opacity:1;color:rgb(123 124 230/var(--tw-text-opacity,1))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:text-\[\#7B7CE6\]{--tw-text-opacity:1;color:rgb(123 124 230/var(--tw-text-opacity,1))}@media (min-width:640px){.sm\:ml-3{margin-left:.75rem}.sm\:inline{display:inline}.sm\:flex{display:flex}.sm\:h-24{height:6rem}.sm\:w-24{width:6rem}.sm\:w-4{width:1rem}.sm\:w-56{width:14rem}.sm\:w-\[255px\]{width:255px}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-start{align-items:flex-start}.sm\:gap-6{gap:1.5rem}.sm\:p-12{padding:3rem}.sm\:p-8{padding:2rem}.sm\:px-10{padding-left:2.5rem;padding-right:2.5rem}.sm\:py-16{padding-top:4rem;padding-bottom:4rem}.sm\:py-20{padding-top:5rem;padding-bottom:5rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}}@media (min-width:768px){.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}.md\:rounded-\[32px\]{border-radius:32px}.md\:px-6{padding-left:1.5rem;padding-right:1.5rem}.md\:py-6{padding-top:1.5rem;padding-bottom:1.5rem}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width:1024px){.lg\:col-span-5{grid-column:span 5/span 5}.lg\:col-span-6{grid-column:span 6/span 6}.lg\:col-span-7{grid-column:span 7/span 7}.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\:grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr))}.lg\:justify-end{justify-content:flex-end}.lg\:gap-8{gap:2rem}.lg\:px-10{padding-left:2.5rem;padding-right:2.5rem}.lg\:px-14{padding-left:3.5rem;padding-right:3.5rem}.lg\:py-20{padding-top:5rem;padding-bottom:5rem}.lg\:text-\[52px\]{font-size:52px}}@media (prefers-color-scheme:dark){.dark\:bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59/var(--tw-bg-opacity,1))}}</style>
+</head>
+
+<body class="py-0 md:py-6 px-0 md:px-6 lg:px-10">
+
+  <!-- ==========================================================================
+       1. MINIMAL, SLOWER INTRO LANDING SCREEN MATCHING WEBSITE PALETTE
+       ========================================================================== -->
+  <div id="intro-loader" role="dialog" aria-label="Welcome Screen">
+    <div class="flex flex-col items-center text-center max-w-xl mx-auto px-6">
+      <!-- Pulsing Geometric 'A' Monogram -->
+      <div class="logo-pulse mb-7">
+        <svg class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="112" height="112" x="4" y="4" rx="26" fill="#181B26" stroke="#7B7CE6" stroke-width="3"/>
+          <path d="M52 24 L64 24 L42 74 L54 88 L42 88 L30 74 Z" fill="#58F0C4"/>
+          <path d="M28 78 L38 90 L30 96 L20 96 Z" fill="#7B7CE6"/>
+          <path d="M67 24 L96 96 L82 96 L58 38 Z" fill="#FFFFFF"/>
+          <line x1="58" y1="70" x2="76" y2="58" stroke="#58F0C4" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="58" cy="70" r="5.5" fill="#58F0C4"/>
+        </svg>
+      </div>
+
+      <!-- Staggered Letter-by-Letter Name Animation -->
+      <div class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-none mb-3 text-main" role="presentation">
+        <span class="char-reveal" style="animation-delay:0.08s">A</span><span class="char-reveal" style="animation-delay:0.16s">R</span><span class="char-reveal" style="animation-delay:0.24s">S</span><span class="char-reveal" style="animation-delay:0.32s">H</span>
+        <span class="inline-block w-2.5 sm:w-4"></span>
+        <span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.42s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.50s">G</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.58s">R</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.66s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.74s">W</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.82s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.90s">L</span>
+      </div>
+
+      <!-- Minimal Role Label -->
+      <p class="role-reveal text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-sub mb-8">
+        Web Developer
+      </p>
+
+      <!-- Sleek Minimal Progress Bar -->
+      <div class="w-48 sm:w-56 h-1.5 rounded-full overflow-hidden" style="background-color: var(--border-line);">
+        <div id="loader-bar" class="h-full rounded-full bg-gradient-to-r from-[#7B7CE6] via-[#8CC7F7] to-[#58F0C4] transition-all duration-100 ease-out" style="width: 0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN PORTFOLIO SHELL (XANDER + CELLS HYBRID)
+       ========================================================================== -->
+  <div class="max-w-[1360px] mx-auto xander-shell md:rounded-[32px] overflow-hidden">
+
+    <!-- STICKY NAVIGATION BAR (INTRO BUTTON REMOVED) -->
+    <header class="sticky top-0 z-40 backdrop-blur-md border-b" style="background-color: var(--bg-glass); border-color: var(--border-line);">
+      <div class="max-w-7xl mx-auto px-5 sm:px-10 h-20 flex items-center justify-between gap-4">
+        <!-- Brand Logo -->
+        <a href="#top" class="flex items-center gap-3 group">
+          <svg class="w-10 h-10 rounded-xl shadow-sm transition-transform group-hover:scale-105" viewBox="0 0 120 120" fill="none">
+            <rect width="112" height="112" x="4" y="4" rx="26" fill="#181B26" stroke="#7B7CE6" stroke-width="4"/>
+            <path d="M52 24 L64 24 L42 74 L54 88 L42 88 L30 74 Z" fill="#58F0C4"/>
+            <path d="M28 78 L38 90 L30 96 L20 96 Z" fill="#7B7CE6"/>
+            <path d="M67 24 L96 96 L82 96 L58 38 Z" fill="#FFFFFF"/>
+            <line x1="58" y1="70" x2="76" y2="58" stroke="#58F0C4" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="58" cy="70" r="6" fill="#58F0C4"/>
+          </svg>
+          <div>
+            <span class="text-lg font-extrabold tracking-tight text-main">Arsh<span class="text-[#7B7CE6]">.</span></span>
+            <span class="block text-[10px] font-mono uppercase tracking-widest text-mute">Web Developer</span>
+          </div>
+        </a>
+
+        <!-- Center Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-sub">
+          <a href="#about" class="hover:text-[#7B7CE6] transition-colors">About</a>
+          <a href="#services" class="hover:text-[#7B7CE6] transition-colors">Services</a>
+          <a href="#works" class="hover:text-[#7B7CE6] transition-colors">Works</a>
+          <a href="#experience" class="hover:text-[#7B7CE6] transition-colors">Experience</a>
+          <a href="#skills" class="hover:text-[#7B7CE6] transition-colors">Skills</a>
+          <a href="#contact" class="hover:text-[#7B7CE6] transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Controls: Theme Switcher & Primary CTA -->
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme" class="p-2.5 rounded-full surface-subtle text-main hover:border-[#7B7CE6] transition">
+            <!-- Sun Icon -->
+            <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"></circle>
+              <path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+            </svg>
+            <!-- Moon Icon -->
+            <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            </svg>
+          </button>
+
+          <a href="#contact" class="btn-indigo px-5 py-2.5 text-xs sm:text-sm">
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================================================
+         HERO SECTION (SMALLER PORTRAIT + SIDE PILLS + 100% UNOBSTRUCTED PHOTO)
+         ======================================================================== -->
+    <section id="top" class="relative hero-aura py-12 sm:py-16 lg:py-20 px-5 sm:px-10 lg:px-14 overflow-hidden">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        <!-- Left 6 Columns: First-Person Headline, Bio, Dual Pill CTAs & 3 Impact Metrics -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full surface-card text-xs font-mono font-semibold text-main">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#58F0C4]"></span>
+            <span>AVAILABLE FOR FULL-STACK &amp; WEB DEVELOPER ROLES</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.12] text-main">
+            Full-Stack Developer <br class="hidden sm:inline" />
+            Building Fast, <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#7B7CE6] via-[#58B9F7] to-[#16C79A]">
+              Secure Websites
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-sub max-w-xl leading-relaxed">
+            I am a dedicated Web Developer with a strong academic foundation (<strong class="text-main">8.80 CGPA</strong>) and multi-disciplinary expertise in <strong class="text-main">Software Engineering</strong>, <strong class="text-main">Decentralized Authentication</strong>, and <strong class="text-main">Marketing Automation</strong>. I focus on building responsive, high-speed digital solutions that boost performance and user retention.
+          </p>
+
+          <!-- Xander Pill Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-1">
+            <a href="#contact" class="btn-indigo px-8 py-3.5 text-sm">
+              Let's Talk
+            </a>
+            <a href="#works" class="btn-outline px-8 py-3.5 text-sm">
+              View My Works
+            </a>
+            <a href="Arsh_Agrawal_Resume.pdf" download="Arsh_Agrawal_Resume.pdf" class="btn-outline px-8 py-3.5 text-sm inline-flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
+              Download CV
+            </a>
+          </div>
+
+          <!-- Xander Bottom 3-Column Metrics Row -->
+          <div class="pt-6 border-t grid grid-cols-3 gap-6 max-w-lg" style="border-color: var(--border-line);">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-main">45%</div>
+              <div class="text-xs text-sub mt-1 leading-snug">responsiveness &amp; speed boost</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-main">8.80</div>
+              <div class="text-xs text-sub mt-1 leading-snug">final B.Voc. CGPA (Grade A)</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-[#7B7CE6]">Grade O</div>
+              <div class="text-xs text-sub mt-1 leading-snug">FaceChain capstone distinction</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 6 Columns: Smaller Portrait Card + Side-Shifted Info & Skill Pills (0% Face Coverage) -->
+        <div class="lg:col-span-6 flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-5 sm:gap-6">
+
+          <!-- Compact Portrait Frame (Face & Suit 100% Unobstructed) -->
+          <div class="relative w-[235px] sm:w-[255px] flex-shrink-0">
+            <!-- Decorative Top-Left Isometric Cube Badge -->
+            <div class="hidden sm:flex absolute -left-5 -top-5 z-20 w-13 h-13 p-2.5 rounded-2xl surface-card items-center justify-center float-2">
+              <svg class="w-7 h-7" viewBox="0 0 48 48" fill="none">
+                <polygon points="24,4 42,14 24,24 6,14" fill="#8CC7F7" fill-opacity="0.35" stroke="#7B7CE6" stroke-width="2"/>
+                <polygon points="6,14 24,24 24,44 6,34" fill="#58F0C4" fill-opacity="0.35" stroke="#7B7CE6" stroke-width="2"/>
+                <polygon points="24,24 42,14 42,34 24,44" fill="#7B7CE6" fill-opacity="0.25" stroke="#7B7CE6" stroke-width="2"/>
+                <circle cx="24" cy="24" r="3" fill="#58F0C4"/>
+              </svg>
+            </div>
+
+            <div class="rounded-[26px] p-2.5 surface-card">
+              <div class="rounded-[20px] overflow-hidden aspect-[4/5] bg-slate-200 dark:bg-slate-800">
+                <img
+                  src="images/Mba%20arsh.jpeg"
+                  alt="Arsh Agrawal — Web Developer"
+                  class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                  onerror="this.onerror=null; this.src='https://placehold.co/480x600/7B7CE6/FFFFFF?text=Arsh+Agrawal';"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side Column: Name/Degree Card + 3 Xander Skill Pills Shifted Completely Beside the Photo -->
+          <div class="flex flex-col items-center sm:items-start gap-3.5 w-full sm:w-auto">
+
+            <!-- Shifted Name & Degree Card (No Grade Badge, Completely Off the Photo) -->
+            <div class="surface-card rounded-2xl px-4 py-3 border-l-4 border-l-[#7B7CE6] w-full sm:w-auto">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#58F0C4]"></span>
+                <p class="font-extrabold text-sm sm:text-base text-main leading-tight">Arsh Agrawal</p>
+              </div>
+              <p class="font-mono text-[11px] text-[#7B7CE6] font-semibold mt-1">
+                B.Voc. Web Technology
+              </p>
+            </div>
+
+            <!-- Pill 1: Full-Stack Web Dev -->
+            <div class="xander-pill float-1">
+              <span class="mint-badge">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                </svg>
+              </span>
+              <span>Full-Stack Web Dev</span>
+            </div>
+
+            <!-- Pill 2: Blockchain Security -->
+            <div class="xander-pill float-2 sm:ml-3">
+              <span class="mint-badge">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/>
+                </svg>
+              </span>
+              <span>Blockchain Security</span>
+            </div>
+
+            <!-- Pill 3: MarTech & UI/UX -->
+            <div class="xander-pill float-3">
+              <span class="mint-badge">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+              </span>
+              <span>MarTech &amp; UI/UX</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         KINETIC SYNTAX MARQUEE (FROM CELLS REFERENCE)
+         ======================================================================== -->
+    <div class="border-y py-3.5 overflow-hidden select-none" style="background-color: var(--bg-subtle); border-color: var(--border-line);">
+      <div class="marquee-track font-mono text-xs uppercase tracking-widest text-sub">
+        <span class="mx-6">WEB_TECHNOLOGY; ^HTML5 * \\^CSS3</span>
+        <span class="text-[#7B7CE6] mx-2">•</span>
+        <span class="mx-6">FACECHAIN_AUTH // BLOCKCHAIN + BIOMETRICS (GRADE O)</span>
+        <span class="text-[#16C79A] mx-2">•</span>
+        <span class="mx-6">PYTHON * JAVA * JAVASCRIPT * PHP * SQL (MYSQL)</span>
+        <span class="text-[#7B7CE6] mx-2">•</span>
+        <span class="mx-6">MARKETING_AUTOMATION // ZOHO • ODOO • MAILCHIMP</span>
+        <span class="text-[#16C79A] mx-2">•</span>
+        <span class="mx-6">WEB_TECHNOLOGY; ^HTML5 * \\^CSS3</span>
+        <span class="text-[#7B7CE6] mx-2">•</span>
+        <span class="mx-6">FACECHAIN_AUTH // BLOCKCHAIN + BIOMETRICS (GRADE O)</span>
+        <span class="text-[#16C79A] mx-2">•</span>
+        <span class="mx-6">PYTHON * JAVA * JAVASCRIPT * PHP * SQL (MYSQL)</span>
+        <span class="text-[#7B7CE6] mx-2">•</span>
+        <span class="mx-6">MARKETING_AUTOMATION // ZOHO • ODOO • MAILCHIMP</span>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         3. SERVICES I PROVIDE (FIRST-PERSON + 01 AS CORE SPECIALTY)
+         ======================================================================== -->
+    <section id="services" class="py-16 sm:py-20 px-5 sm:px-10 lg:px-14">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#7B7CE6] font-semibold block mb-2">
+              // 01 — MY CAPABILITIES &amp; SPECIALITIES
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-main">
+              SERVICES I PROVIDE
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-sub max-w-md">
+            I combine responsive full-stack web engineering, decentralized security, and marketing automation to build high-performing digital products.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 cells-grid rounded-2xl overflow-hidden">
+
+          <!-- Cell 01: CORE SPECIALTY (Highlighted Active Cell) -->
+          <div class="cells-cell p-7 flex flex-col justify-between relative overflow-hidden" style="background: linear-gradient(145deg, rgba(123,124,230,0.16), rgba(88,240,196,0.12));">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-2xl font-mono font-bold text-[#16C79A]">01.</span>
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase bg-[#58F0C4] text-[#064E3B] shadow-sm">
+                  CORE SPECIALTY
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-main mb-2.5">Responsive Web Engineering</h3>
+              <p class="text-sm text-sub leading-relaxed">
+                I build fast, semantic, cross-device web interfaces with HTML5, CSS3, and JavaScript—proven to boost responsiveness and user retention by 45%.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t text-[11px] font-mono uppercase tracking-wider text-main font-semibold" style="border-color: var(--border-line);">
+              HTML5 • CSS3 • JS • UI/UX
+            </div>
+          </div>
+
+          <!-- Cell 02: Standard Cell -->
+          <div class="cells-cell p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-2xl font-mono font-bold text-[#7B7CE6]">02.</span>
+                <span class="w-10 h-10 rounded-xl bg-[#7B7CE6]/15 text-[#7B7CE6] flex items-center justify-center">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-main mb-2.5">Protection of Identity &amp; Data</h3>
+              <p class="text-sm text-sub leading-relaxed">
+                I design decentralized authentication systems merging computer vision facial recognition with immutable blockchain smart contracts.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t text-[11px] font-mono uppercase tracking-wider text-mute" style="border-color: var(--border-line);">
+              PYTHON • BLOCKCHAIN • HCI
+            </div>
+          </div>
+
+          <!-- Cell 03 -->
+          <div class="cells-cell p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-2xl font-mono font-bold text-[#7B7CE6]">03.</span>
+                <span class="w-10 h-10 rounded-xl bg-[#7B7CE6]/15 text-[#7B7CE6] flex items-center justify-center">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                  </svg>
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-main mb-2.5">Back-End &amp; Database Systems</h3>
+              <p class="text-sm text-sub leading-relaxed">
+                I architect relational schemas, server-side logic, and functionality test suites across Java, Python, PHP, ASP.NET, and MySQL.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t text-[11px] font-mono uppercase tracking-wider text-mute" style="border-color: var(--border-line);">
+              JAVA • PYTHON • PHP • MYSQL
+            </div>
+          </div>
+
+          <!-- Cell 04 -->
+          <div class="cells-cell p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-2xl font-mono font-bold text-[#7B7CE6]">04.</span>
+                <span class="w-10 h-10 rounded-xl bg-[#7B7CE6]/15 text-[#7B7CE6] flex items-center justify-center">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+                  </svg>
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-main mb-2.5">Marketing Automation &amp; Analytics</h3>
+              <p class="text-sm text-sub leading-relaxed">
+                I configure CRM pipelines, automated campaigns, and website analytics using Zoho, Odoo, and Mailchimp to drive measurable growth.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t text-[11px] font-mono uppercase tracking-wider text-mute" style="border-color: var(--border-line);">
+              ZOHO • ODOO • MAILCHIMP
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FEATURED PROJECTS & UX CASE STUDY VIEWER (FACECHAIN & PORTFOLIO)
+         ======================================================================== -->
+    <section id="works" class="py-16 sm:py-20 px-5 sm:px-10 lg:px-14 border-t" style="background-color: var(--bg-subtle); border-color: var(--border-line);">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#7B7CE6] font-semibold block mb-2">
+              // 02 — MY PROJECTS &amp; INITIATIVES
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-main">
+              Engineering Case Studies
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-sub max-w-md">
+            Interactive breakdown of my requirement analysis, system architecture, and live deployments.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+          <!-- Left 7 Cols: FaceChain Interactive UX Case Study Browser Window -->
+          <div class="lg:col-span-7 surface-card rounded-3xl overflow-hidden">
+            <div class="px-5 py-3.5 border-b flex items-center justify-between gap-4" style="border-color: var(--border-line); background-color: var(--bg-subtle);">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              </div>
+              <div class="text-xs font-mono text-sub truncate px-3 py-1 rounded-full surface-card">
+                github.com/ArshSimple/FaceChain
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-[#58F0C4] text-[#064E3B]">
+                Grade O
+              </span>
+            </div>
+
+            <div class="p-6 sm:p-8">
+              <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+                <div>
+                  <span class="text-xs font-mono uppercase tracking-wider text-[#7B7CE6] font-semibold">Final Year Capstone Project</span>
+                  <h3 class="text-2xl sm:text-3xl font-extrabold text-main mt-1">FaceChain — Decentralized Auth</h3>
+                </div>
+                <a href="https://github.com/ArshSimple/FaceChain" target="_blank" rel="noopener noreferrer" class="btn-indigo px-5 py-2.5 text-xs font-mono inline-flex items-center gap-2">
+                  <span>View Repository</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+
+              <p class="text-sm sm:text-base text-sub leading-relaxed mb-6">
+                I was awarded <strong class="text-main">Grade O (Outstanding)</strong> for building a decentralized authentication system merging facial recognition and blockchain technology. I led the requirement analysis, design planning, and full technical implementation.
+              </p>
+
+              <!-- 4-Stage UX Case Study Tabs -->
+              <div class="flex flex-wrap gap-2 mb-6 border-b pb-4" style="border-color: var(--border-line);">
+                <button onclick="switchCaseTab('summary')" id="tab-btn-summary" class="case-tab px-4 py-2 rounded-xl text-xs font-mono font-bold bg-[#7B7CE6] text-white transition">
+                  01. Summary
+                </button>
+                <button onclick="switchCaseTab('problem')" id="tab-btn-problem" class="case-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold surface-subtle text-sub transition">
+                  02. Problem Statement
+                </button>
+                <button onclick="switchCaseTab('journey')" id="tab-btn-journey" class="case-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold surface-subtle text-sub transition">
+                  03. Architecture Flow
+                </button>
+                <button onclick="switchCaseTab('testing')" id="tab-btn-testing" class="case-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold surface-subtle text-sub transition">
+                  04. Testing &amp; Outcome
+                </button>
+              </div>
+
+              <!-- Tab Panels -->
+              <div id="tab-panel-summary" class="case-panel rounded-2xl p-5 bg-amber-500/10 border border-amber-500/25">
+                <h4 class="text-sm font-bold text-main mb-2">Executive Summary (Introduction)</h4>
+                <p class="text-xs sm:text-sm text-sub leading-relaxed">
+                  I designed FaceChain to eliminate single-point-of-failure credential databases by pairing real-time facial landmark extraction with blockchain smart contract verification—providing tamper-proof identity validation.
+                </p>
+              </div>
+
+              <div id="tab-panel-problem" class="case-panel hidden rounded-2xl p-5 bg-rose-500/10 border border-rose-500/25">
+                <h4 class="text-sm font-bold text-main mb-2">Challenges &amp; Problem Statement</h4>
+                <p class="text-xs sm:text-sm text-sub leading-relaxed">
+                  Traditional password and centralized biometric servers are vulnerable to credential stuffing and database breaches. I solved this by storing cryptographic identity proofs on a decentralized ledger.
+                </p>
+              </div>
+
+              <div id="tab-panel-journey" class="case-panel hidden rounded-2xl p-5 bg-sky-500/10 border border-sky-500/25">
+                <h4 class="text-sm font-bold text-main mb-2">User Journey &amp; Verification Pipeline</h4>
+                <p class="text-xs sm:text-sm text-sub leading-relaxed">
+                  1. Camera captures live facial frame → 2. 128-D facial encoding extracted → 3. Smart contract verifies wallet &amp; identity state → 4. Immutable session token granted.
+                </p>
+              </div>
+
+              <div id="tab-panel-testing" class="case-panel hidden rounded-2xl p-5 bg-emerald-500/10 border border-emerald-500/25">
+                <h4 class="text-sm font-bold text-main mb-2">Functionality &amp; Usability Testing</h4>
+                <p class="text-xs sm:text-sm text-sub leading-relaxed">
+                  I conducted rigorous functionality testing to validate lighting resilience, spoof resistance, and zero-tamper ledger transactions—earning the university's highest Grade O (Outstanding) distinction.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-2 mt-6">
+                <span class="px-3 py-1 rounded-full text-xs font-mono surface-subtle text-sub">Python</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono surface-subtle text-sub">Facial Recognition (HCI)</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono surface-subtle text-sub">Blockchain</span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono surface-subtle text-sub">Software Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5 Cols: Personal Portfolio Website Card -->
+          <div class="lg:col-span-5 surface-card rounded-3xl overflow-hidden flex flex-col justify-between">
+            <div class="px-5 py-3.5 border-b flex items-center justify-between gap-4" style="border-color: var(--border-line); background-color: var(--bg-subtle);">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              </div>
+              <div class="text-xs font-mono text-sub truncate px-3 py-1 rounded-full surface-card">
+                arshsimple.github.io
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-[#7B7CE6]/15 text-[#7B7CE6]">
+                LIVE WEB
+              </span>
+            </div>
+
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-mono uppercase tracking-wider text-[#16C79A] font-semibold">Front-End Architecture</span>
+                <h3 class="text-2xl font-extrabold text-main mt-1 mb-3">Personal Portfolio Website</h3>
+                <p class="text-sm sm:text-base text-sub leading-relaxed mb-6">
+                  I designed and developed my static personal portfolio website using HTML5, CSS3, and JavaScript. I implemented smooth scroll animations, adaptive theming, and responsive layouts for a seamless cross-device experience.
+                </p>
+
+                <div class="space-y-2.5 mb-6">
+                  <div class="flex items-center gap-2.5 text-xs sm:text-sm text-sub">
+                    <span class="w-2 h-2 rounded-full bg-[#58F0C4]"></span>
+                    <span>Cross-device responsive grid system</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 text-xs sm:text-sm text-sub">
+                    <span class="w-2 h-2 rounded-full bg-[#7B7CE6]"></span>
+                    <span>Scroll-triggered animations &amp; interactive states</span>
+                  </div>
+                  <div class="flex items-center gap-2.5 text-xs sm:text-sm text-sub">
+                    <span class="w-2 h-2 rounded-full bg-[#8CC7F7]"></span>
+                    <span>Semantic HTML5 &amp; optimized asset delivery</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t flex items-center justify-between gap-4" style="border-color: var(--border-line);">
+                <div class="flex gap-2">
+                  <span class="px-3 py-1 rounded-full text-xs font-mono surface-subtle text-sub">HTML5</span>
+                  <span class="px-3 py-1 rounded-full text-xs font-mono surface-subtle text-sub">CSS3</span>
+                  <span class="px-3 py-1 rounded-full text-xs font-mono surface-subtle text-sub">JavaScript</span>
+                </div>
+                <a href="https://arshsimple.github.io" target="_blank" rel="noopener noreferrer" class="btn-outline px-4 py-2 text-xs font-mono inline-flex items-center gap-1.5">
+                  <span>Live Site</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         EXPERIENCE & EDUCATION (FIRST-PERSON, NO SGPA MENTIONS)
+         ======================================================================== -->
+    <section id="experience" class="py-16 sm:py-20 px-5 sm:px-10 lg:px-14">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        <!-- Left 7 Columns: Professional Internship Experience -->
+        <div class="lg:col-span-7">
+          <span class="text-xs font-mono uppercase tracking-widest text-[#7B7CE6] font-semibold block mb-2">
+            // 03 — MY INDUSTRY TRACK RECORD
+          </span>
+          <h2 class="text-3xl font-extrabold tracking-tight text-main mb-8">
+            Work Experience
+          </h2>
+
+          <div class="surface-card rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-xl font-extrabold text-main">Web Developer Intern</h3>
+                <p class="text-sm font-semibold text-[#7B7CE6]">Let's Talk Communication • Mumbai</p>
+              </div>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold surface-subtle text-main">
+                04/2025 – 05/2025
+              </span>
+            </div>
+
+            <ul class="space-y-3.5 text-sm sm:text-base text-sub mt-5">
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#58F0C4] text-[#064E3B] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+                <span>I enhanced website responsiveness and performance by <strong class="text-main">45%</strong>, directly improving user satisfaction and retention.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#58F0C4] text-[#064E3B] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+                <span>I collaborated with design and content teams to develop static web pages that strengthened brand engagement.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#58F0C4] text-[#064E3B] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+                <span>I managed multiple project deliverables concurrently, ensuring timely and accurate completion.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-[#58F0C4] text-[#064E3B] flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+                <span>I cultivated strong communication and coordination skills through daily collaboration with senior designers and clients.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right 5 Columns: Academic Foundation & Interests (Strictly Final CGPA Only, No SGPA) -->
+        <div id="about" class="lg:col-span-5">
+          <span class="text-xs font-mono uppercase tracking-widest text-[#16C79A] font-semibold block mb-2">
+            // 04 — MY ACADEMIC FOUNDATION
+          </span>
+          <h2 class="text-3xl font-extrabold tracking-tight text-main mb-8">
+            Education &amp; Honors
+          </h2>
+
+          <div class="space-y-5">
+            <div class="surface-card rounded-3xl p-7">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#7B7CE6]/15 text-[#7B7CE6]">
+                  Graduating 06/2026
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#58F0C4] text-[#064E3B]">
+                  Final CGPA: 8.80 / 10 (Grade A)
+                </span>
+              </div>
+              <h3 class="text-xl font-extrabold text-main">Bachelor of Vocation (B.Voc.) in Web Technology</h3>
+              <p class="text-sm text-sub mt-1">HSNC University, Mumbai</p>
+              <p class="text-xs sm:text-sm text-sub mt-4 leading-relaxed">
+                Graduated with a final CGPA of 8.80/10, demonstrating consistent academic excellence across Software Engineering, Full-Stack Web Development, Database Management, and Human-Computer Interaction.
+              </p>
+            </div>
+
+            <div class="surface-subtle rounded-3xl p-6">
+              <h4 class="text-sm font-bold uppercase font-mono tracking-wider text-main mb-3">
+                My Interests &amp; Strengths
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold surface-card text-main">Public Speaking</span>
+                <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold surface-card text-main">Logical Reasoning</span>
+                <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold surface-card text-main">Market Research</span>
+                <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold surface-card text-main">Project Coordination</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. ANIMATED TECHNICAL SKILLS MATRIX (STAGGERED REVEAL + SHIMMER + HOVER LIFT)
+         ======================================================================== -->
+    <section id="skills" class="py-16 sm:py-20 px-5 sm:px-10 lg:px-14 border-t" style="background-color: var(--bg-subtle); border-color: var(--border-line);">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#7B7CE6] font-semibold block mb-2">
+              // 05 — MY TECHNICAL ARSENAL
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-main">
+              Skills &amp; Technologies
+            </h2>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap gap-2">
+            <button onclick="filterSkills('all')" data-filter="all" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold bg-[#7B7CE6] text-white transition">
+              All (28)
+            </button>
+            <button onclick="filterSkills('dev')" data-filter="dev" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-semibold surface-card text-sub transition">
+              Languages &amp; Web
+            </button>
+            <button onclick="filterSkills('eng')" data-filter="eng" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-semibold surface-card text-sub transition">
+              Engineering &amp; Data
+            </button>
+            <button onclick="filterSkills('martech')" data-filter="martech" class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-semibold surface-card text-sub transition">
+              MarTech &amp; Product
+            </button>
+          </div>
+        </div>
+
+        <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
+          <!-- Languages & Web -->
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>JavaScript</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>Python</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>Java</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>PHP</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>HTML5 &amp; CSS3</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>SQL (MySQL)</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>C &amp; C++</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>ASP.NET</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>Front-End Dev</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>Back-End Dev</span>
+          </div>
+          <div data-cat="dev" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#58F0C4] skill-dot flex-shrink-0"></span><span>Responsive Design</span>
+          </div>
+
+          <!-- Engineering, Security & Data -->
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>Git &amp; GitHub</span>
+          </div>
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>DevOps</span>
+          </div>
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>Software Engineering</span>
+          </div>
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>Software Testing</span>
+          </div>
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>Functionality Testing</span>
+          </div>
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>Machine Learning (HCI)</span>
+          </div>
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>Data Warehousing</span>
+          </div>
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>Kali Linux OS</span>
+          </div>
+          <div data-cat="eng" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#7B7CE6] skill-dot flex-shrink-0"></span><span>Computer Networks</span>
+          </div>
+
+          <!-- MarTech & Product -->
+          <div data-cat="martech" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#8CC7F7] skill-dot flex-shrink-0"></span><span>Zoho Automation</span>
+          </div>
+          <div data-cat="martech" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#8CC7F7] skill-dot flex-shrink-0"></span><span>Odoo ERP</span>
+          </div>
+          <div data-cat="martech" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#8CC7F7] skill-dot flex-shrink-0"></span><span>Mailchimp</span>
+          </div>
+          <div data-cat="martech" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#8CC7F7] skill-dot flex-shrink-0"></span><span>Digital Marketing</span>
+          </div>
+          <div data-cat="martech" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#8CC7F7] skill-dot flex-shrink-0"></span><span>Website Analytics</span>
+          </div>
+          <div data-cat="martech" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#8CC7F7] skill-dot flex-shrink-0"></span><span>User Experience (UX)</span>
+          </div>
+          <div data-cat="martech" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#8CC7F7] skill-dot flex-shrink-0"></span><span>Project Management</span>
+          </div>
+          <div data-cat="martech" class="skill-item surface-card rounded-2xl p-4 flex items-center justify-center gap-2.5 font-semibold text-sm text-main">
+            <span class="w-2 h-2 rounded-full bg-[#8CC7F7] skill-dot flex-shrink-0"></span><span>Team Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. UNIFIED CONTACT SECTION (LINKEDIN URL HIDDEN INSIDE "Arsh Agrawal")
+         ======================================================================== -->
+    <section id="contact" class="py-16 sm:py-20 px-5 sm:px-10 lg:px-14 border-t" style="border-color: var(--border-line);">
+      <div class="max-w-7xl mx-auto">
+        <div class="surface-card rounded-[32px] p-8 sm:p-12 relative overflow-hidden hero-aura">
+          <div class="max-w-2xl mb-10">
+            <span class="text-xs font-mono uppercase tracking-widest text-[#7B7CE6] font-semibold block mb-2">
+              // 06 — DIRECT CHANNELS
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-main mb-3">
+              Have a Project Idea or Role in Mind?
+            </h2>
+            <p class="text-sm sm:text-base text-sub">
+              Feel free to reach out directly through any of my verified channels below. I am based in Mumbai, India and available for immediate collaboration.
+            </p>
+          </div>
+
+          <!-- Single-Instance Contact & Profile Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            <!-- Email (Single Instance) -->
+            <a href="mailto:arshagrawala@gmail.com" class="surface-card rounded-2xl p-5 hover:border-[#7B7CE6] transition group">
+              <div class="w-10 h-10 rounded-full bg-[#58F0C4] text-[#064E3B] flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-mono uppercase text-mute block">Email</span>
+              <span class="text-sm font-bold text-main group-hover:text-[#7B7CE6] transition break-all">arshagrawala@gmail.com</span>
+            </a>
+
+            <!-- Phone (Single Instance) -->
+            <a href="tel:+917715871734" class="surface-card rounded-2xl p-5 hover:border-[#7B7CE6] transition group">
+              <div class="w-10 h-10 rounded-full bg-[#58F0C4] text-[#064E3B] flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-mono uppercase text-mute block">Phone</span>
+              <span class="text-sm font-bold text-main group-hover:text-[#7B7CE6] transition">+91 7715871734</span>
+            </a>
+
+            <!-- LinkedIn (Single Instance — URL Hidden Inside "Arsh Agrawal" Text) -->
+            <a href="https://www.linkedin.com/in/arsh-agrawal2003" target="_blank" rel="noopener noreferrer" class="surface-card rounded-2xl p-5 hover:border-[#7B7CE6] transition group">
+              <div class="w-10 h-10 rounded-full bg-[#7B7CE6] text-white flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-mono uppercase text-mute block">LinkedIn</span>
+              <span class="text-sm font-bold text-main group-hover:text-[#7B7CE6] transition inline-flex items-center gap-1.5">
+                <span>Arsh Agrawal</span>
+                <svg class="w-3.5 h-3.5 opacity-70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </span>
+            </a>
+
+            <!-- GitHub (Single Instance) -->
+            <a href="https://github.com/ArshSimple" target="_blank" rel="noopener noreferrer" class="surface-card rounded-2xl p-5 hover:border-[#7B7CE6] transition group">
+              <div class="w-10 h-10 rounded-full bg-[#181B26] text-white flex items-center justify-center mb-4">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </div>
+              <span class="text-xs font-mono uppercase text-mute block">GitHub</span>
+              <span class="text-sm font-bold text-main group-hover:text-[#7B7CE6] transition">github.com/ArshSimple</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="py-8 px-5 sm:px-10 lg:px-14 border-t text-xs font-mono text-mute flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color: var(--border-line);">
+      <span>© 2026 ARSH AGRAWAL. ALL RIGHTS RESERVED.</span>
+      <span>MUMBAI, INDIA • B.VOC. WEB TECHNOLOGY</span>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================================================
+       INTERACTIVE SCRIPTS (SLOWER INTRO LOADER, THEME ENGINE, TABS, SKILL ANIMATION)
+       ========================================================================== -->
+  <script>
+    // 1. Slower, Smooth Intro Landing Animation (~2.6 seconds total)
+    let loaderProgress = 0;
+    let loaderTimer = null;
+
+    function runIntroLoader() {
+      const loader = document.getElementById('intro-loader');
+      const bar = document.getElementById('loader-bar');
+
+      loader.classList.remove('loader-hidden');
+      loaderProgress = 0;
+
+      if (loaderTimer) clearInterval(loaderTimer);
+
+      // Update every 34ms by 2% -> ~1.7s fill + 200ms pause before curtain lift
+      loaderTimer = setInterval(() => {
+        loaderProgress += 2;
+        if (loaderProgress >= 100) {
+          loaderProgress = 100;
+          clearInterval(loaderTimer);
+          setTimeout(dismissIntro, 200);
+        }
+        bar.style.width = loaderProgress + '%';
+      }, 34);
+    }
+
+    function dismissIntro() {
+      if (loaderTimer) clearInterval(loaderTimer);
+      const loader = document.getElementById('intro-loader');
+      loader.classList.add('loader-hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (!document.documentElement.classList.contains('skip-intro')) {
+        runIntroLoader();
+        try { sessionStorage.setItem('introSeen', '1'); } catch (e) {}
+      }
+      animateSkillCards();
+    });
+
+    // 2. Light / Dark Mode Theme Switcher
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('arsh-portfolio-theme', next);
+      updateThemeIcons(next);
+    }
+
+    function updateThemeIcons(theme) {
+      const sun = document.getElementById('icon-sun');
+      const moon = document.getElementById('icon-moon');
+      if (theme === 'dark') {
+        sun.classList.remove('hidden');
+        moon.classList.add('hidden');
+      } else {
+        sun.classList.add('hidden');
+        moon.classList.remove('hidden');
+      }
+    }
+
+    (function initTheme() {
+      const saved = localStorage.getItem('arsh-portfolio-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', saved);
+      updateThemeIcons(saved);
+    })();
+
+    // 3. UX Case Study Interactive Tabs
+    function switchCaseTab(tabName) {
+      const tabs = ['summary', 'problem', 'journey', 'testing'];
+      tabs.forEach((t) => {
+        const panel = document.getElementById('tab-panel-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === tabName) {
+          panel.classList.remove('hidden');
+          btn.className = 'case-tab px-4 py-2 rounded-xl text-xs font-mono font-bold bg-[#7B7CE6] text-white transition';
+        } else {
+          panel.classList.add('hidden');
+          btn.className = 'case-tab px-4 py-2 rounded-xl text-xs font-mono font-semibold surface-subtle text-sub transition';
+        }
+      });
+    }
+
+    // 4. Staggered Animation & Filtering on Technical Skills
+    function animateSkillCards() {
+      const visibleItems = Array.from(document.querySelectorAll('.skill-item:not(.hidden)'));
+      visibleItems.forEach((item, index) => {
+        item.style.animation = 'none';
+        item.offsetHeight; // trigger reflow
+        item.style.animation = `skillReveal 0.52s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.035}s forwards`;
+      });
+    }
+
+    function filterSkills(category) {
+      const items = document.querySelectorAll('.skill-item');
+      const buttons = document.querySelectorAll('.skill-filter-btn');
+
+      buttons.forEach((btn) => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.className = 'skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold bg-[#7B7CE6] text-white transition';
+        } else {
+          btn.className = 'skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-semibold surface-card text-sub transition';
+        }
+      });
+
+      items.forEach((item) => {
+        if (category === 'all' || item.getAttribute('data-cat') === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      animateSkillCards();
+    }
+
+    // Trigger skill staggered reveal when scrolling into view
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateSkillCards();
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(skillsSection);
+    }
+  </script>
+</body>
+</html>
