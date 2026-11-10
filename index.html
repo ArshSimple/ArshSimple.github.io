@@ -103,6 +103,8 @@
     }
 
     .xander-shell {
+      overflow: hidden;
+      overflow: clip; /* clips like hidden but keeps the sticky header working */
       background-color: var(--bg-canvas);
       border: 1px solid var(--border-line);
       box-shadow: var(--card-shadow);
@@ -126,7 +128,7 @@
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+      transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.45s ease;
     }
 
     #intro-loader.loader-hidden {
@@ -158,11 +160,79 @@
       outline-offset: 3px;
     }
 
+    /* ==========================================================================
+       MOBILE MENU (hamburger) - visible below 768px only
+       ========================================================================== */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      width: 40px;
+      height: 40px;
+      border-radius: 9999px;
+      flex-shrink: 0;
+    }
+
+    .menu-bar {
+      display: block;
+      width: 16px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    .menu-btn.open .menu-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu-btn.open .menu-bar:nth-child(2) { opacity: 0; }
+    .menu-btn.open .menu-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      padding: 8px 20px 16px;
+      background-color: var(--bg-canvas);
+      border-bottom: 1px solid var(--border-line);
+      box-shadow: var(--card-shadow);
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      padding: 14px 4px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .mobile-menu a:last-child { border-bottom: 0; }
+    .mobile-menu a:hover { color: #7B7CE6; }
+    .mobile-menu a.menu-cv { color: #7B7CE6; }
+
+    @media (max-width: 767px) {
+      .menu-btn { display: flex; }
+    }
+
+    @media (max-width: 479px) {
+      .nav-cta { display: none; } /* "Let's Talk" lives in the menu on small phones */
+    }
+
+    @media (min-width: 768px) {
+      .mobile-menu, .mobile-menu.open { display: none; }
+    }
+
+    .intro-name {
+      white-space: nowrap;
+      font-size: clamp(1.3rem, 7.2vw, 1.875rem);
+    }
+
     .char-reveal {
       display: inline-block;
       opacity: 0;
       transform: translateY(28px) scale(0.94);
-      animation: charRise 0.85s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+      animation: charRise 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
     }
 
     @keyframes charRise {
@@ -186,7 +256,7 @@
     .role-reveal {
       opacity: 0;
       animation: roleFadeIn 0.9s ease forwards;
-      animation-delay: 0.95s;
+      animation-delay: 0.8s;
     }
 
     @keyframes pulseGlow {
@@ -420,10 +490,10 @@
       </div>
 
       <!-- Staggered Letter-by-Letter Name Animation -->
-      <div class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-none mb-3 text-main" role="presentation">
-        <span class="char-reveal" style="animation-delay:0.08s">A</span><span class="char-reveal" style="animation-delay:0.16s">R</span><span class="char-reveal" style="animation-delay:0.24s">S</span><span class="char-reveal" style="animation-delay:0.32s">H</span>
+      <div class="intro-name sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-none mb-3 text-main" role="presentation">
+        <span class="char-reveal" style="animation-delay:0.06s">A</span><span class="char-reveal" style="animation-delay:0.13s">R</span><span class="char-reveal" style="animation-delay:0.19s">S</span><span class="char-reveal" style="animation-delay:0.26s">H</span>
         <span class="inline-block w-2.5 sm:w-4"></span>
-        <span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.42s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.50s">G</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.58s">R</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.66s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.74s">W</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.82s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.90s">L</span>
+        <span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.34s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.40s">G</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.46s">R</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.53s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.59s">W</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.66s">A</span><span class="char-reveal text-[#7B7CE6]" style="animation-delay:0.72s">L</span>
       </div>
 
       <!-- Minimal Role Label -->
@@ -441,7 +511,7 @@
   <!-- ==========================================================================
        MAIN PORTFOLIO SHELL (XANDER + CELLS HYBRID)
        ========================================================================== -->
-  <div class="max-w-[1360px] mx-auto xander-shell md:rounded-[32px] overflow-hidden">
+  <div class="max-w-[1360px] mx-auto xander-shell md:rounded-[32px]">
 
     <!-- STICKY NAVIGATION BAR (INTRO BUTTON REMOVED) -->
     <header class="sticky top-0 z-40 backdrop-blur-md border-b" style="background-color: var(--bg-glass); border-color: var(--border-line);">
@@ -486,11 +556,27 @@
             </svg>
           </button>
 
-          <a href="#contact" class="btn-indigo px-5 py-2.5 text-xs sm:text-sm">
+          <a href="#contact" class="btn-indigo px-5 py-2.5 text-xs sm:text-sm nav-cta">
             Let's Talk
           </a>
+
+          <!-- Mobile menu button (phones & small tablets) -->
+          <button id="menu-btn" class="menu-btn surface-subtle text-main" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu()">
+            <span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span>
+          </button>
         </div>
       </div>
+
+      <!-- Mobile dropdown menu -->
+      <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#works" onclick="closeMenu()">Works</a>
+        <a href="#experience" onclick="closeMenu()">Experience</a>
+        <a href="#skills" onclick="closeMenu()">Skills</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="Arsh_Agrawal_Resume.pdf" download="Arsh_Agrawal_Resume.pdf" onclick="closeMenu()" class="menu-cv">Download CV</a>
+      </nav>
     </header>
 
     <!-- ========================================================================
@@ -1249,10 +1335,10 @@
         if (loaderProgress >= 100) {
           loaderProgress = 100;
           clearInterval(loaderTimer);
-          setTimeout(dismissIntro, 200);
+          setTimeout(dismissIntro, 150);
         }
         bar.style.width = loaderProgress + '%';
-      }, 34);
+      }, 30);
     }
 
     function dismissIntro() {
@@ -1268,6 +1354,26 @@
       }
       animateSkillCards();
     });
+
+    // Mobile menu
+    function setMenu(open) {
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      btn.classList.toggle('open', open);
+      menu.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    function toggleMenu() {
+      setMenu(!document.getElementById('mobile-menu').classList.contains('open'));
+    }
+    function closeMenu() { setMenu(false); }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('header')) closeMenu();
+    });
+    window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMenu(); });
 
     // 2. Light / Dark Mode Theme Switcher
     function toggleTheme() {
